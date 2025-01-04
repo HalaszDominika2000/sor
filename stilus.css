@@ -1,3 +1,98 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Verdana, sans-serif;
+    color: beige;
+}
+body {
+    background-image: url(kepek/tegla.jpg);
+}
+
+main {
+    width: 80%;
+    max-width: 1000px; /*7.	A main elem ne lehessen nagyobb, mint 1000px.*/
+    margin: auto;
+    background-color: rgb(#333333);
+}
+
 header {
     background-image: url(kepek/korsosor.jpg);
+    height: 300px;
 }
+
+nav ul {
+    list-style-type: none; /* Felsorolás jelek eltüntetése */
+    display: grid; 
+    gap: 20px; /* Nav elemeknek a távolságát adjuk meg */
+}
+
+nav li a {
+    text-decoration: none; /* Minden dekoráció eltűnik a szövegről */
+}
+
+footer {
+    text-align: center;
+    background-color: gray;
+    height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+/*rácsszerkezet*/
+main {
+    display: grid; /* Terület neve */
+    grid-template-columns: 1fr 1fr; /* Terület felosztás oszlop szerint*/
+    grid-template-areas: 
+    "h h"
+    "as ar"
+    "f f"; /* Kinek mekkora területet adunk: Header, nav, footer teljes szélességében használja article, asside nem teljesen */
+
+}
+
+header {
+    grid-area: h; /* Neveket adtunk, elneveztük */
+}
+
+nav {
+    grid-area: n;
+}
+
+aside {
+    grid-area: as;
+}
+
+article {
+    grid-area: ar;
+}
+
+footer {
+    grid-area: f;
+}
+
+@media only screen and (max-width: 700px) { /* reszponzivitás beállítása, törés pontok kisebb képernyő esetén */
+    main {
+        display: grid; /* Terület neve */
+        grid-template-columns: 1fr; /* Terület felosztás oszlop szerint, egy részre oszlik a képernyő*/
+        grid-template-areas: 
+        "h"
+        "n"
+        "as" 
+        "ar"
+        "f"; /* Kinek mekkora területet adunk: Header, nav, footer teljes szélességében használja article, asside nem teljesen */
+        width: 150%;
+        max-width: 1000px; /* Max szélesség */
+        margin: auto; /* Margónak az állítása */
+        background-color: RGB(255,255,230); /* Háttérszín */
+        
+    }
+    aside {
+        display: grid;
+        grid-template-columns: auto auto;  
+    }
+  }
