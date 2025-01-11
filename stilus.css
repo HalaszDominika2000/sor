@@ -1,38 +1,91 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /*Szegélyek egységesen nézzenek ki*/
     font-family: Arial, Verdana, sans-serif;
     color: beige;
+    padding: 0px;
+    margin: 0px;
 }
 body {
-    background-image: url(kepek/tegla.jpg);
+    background-image: url("kepek/tegla.jpg");
+    background-size:cover; /*Lefedi az egész részt amire beállítjuk*/
+    background-repeat: no-repeat; /*Ne ismételje a képet*/
 }
 
 main {
     width: 80%;
     max-width: 1000px; /*7.	A main elem ne lehessen nagyobb, mint 1000px.*/
     margin: auto;
-    background-color: rgb(#333333);
+    background-color: rgb(51,51,51);
 }
 
 header {
     background-image: url(kepek/korsosor.jpg);
     height: 300px;
     background-size:cover;
+    background-repeat: no-repeat; /*Ne ismételje a képet*/
 }
 
-header h1 {
+h1 {
     font-weight: bold; /* Sima betű vastag betűvé állítása */
     font-family: Garamond;
+    letter-spacing: 4px; /* Betük közti távolság*/
+    font-size: 32px; /*Betűméret*/
+    text-align: left; /*Legyen balra igazítva*/
+    padding-left: 30px;
+    padding-top: 30px;
 }
 
 nav ul {
-    list-style-type: none; /* Felsorolás jelek eltüntetése */
-    display: grid; 
-    gap: 20px; /* Nav elemeknek a távolságát adjuk meg */
+    padding-top: 5px; /* Felül állítottuk a helyet*/
 }
 
 nav li a {
     text-decoration: none; /* Minden dekoráció eltűnik a szövegről */
+    color: red;
+}
+
+nav li a:hover {
+    color: white;
+}
+
+nav li {
+    list-style-type: none; /* Felsorolás jelek eltüntetése */
+    border: 1px solid white; /* Solid: egyenes, dotted: pontozott,*/
+    border-radius: 5px; /*Szegélyt lekerekíti*/
+    font-weight: bold; /*Vastegbetűsre állítom*/
+    padding-left: 20px; /*A szöveg bejjebb került jobboldalra tolódott el*/
+    margin-right: 30px; /*Keretet állítom*/
+    margin-left: 30px; /*Keretet állítom*/
+}
+
+nav li:hover {
+    background-color: lightgrey;
+}
+
+article {
+    text-align: justify; /*Ezzel állítok sorkizártat*/
+    font-size: 10px; /*24.	Az article elemben a bekezdések betű mérete legyen 10px!*/
+    background-color: black;
+    padding: 20px; /* Középen van az artcle és a szegélyektől 20px re került*/
+}
+
+article li {
+    list-style-type: square; /*27.	A felsorolások előtti jel legyen square (négyzet). */
+   
+}
+
+article h3 {
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+article img {
+    float: left; /*26.	Az article elemen belül a kép ússzon el a szöveg mellé balra. */
+    width: 150px;
+    border: 1px solid grey;
+    padding: 5px;
+    margin-right: 30px; /* A képtől a szöveget arrébb vittük jobbra*/
+    margin-left: 15px; 
 }
 
 footer {
@@ -53,20 +106,16 @@ footer {
 /*rácsszerkezet*/
 main {
     display: grid; /* Terület neve */
-    grid-template-columns: 1fr 1fr; /* Terület felosztás oszlop szerint*/
+    grid-template-columns: 2fr 1fr; /* Terület felosztás oszlop szerint*/
     grid-template-areas: 
     "h h"
-    "as ar"
+    "ar as"
     "f f"; /* Kinek mekkora területet adunk: Header, nav, footer teljes szélességében használja article, asside nem teljesen */
 
 }
 
 header {
     grid-area: h; /* Neveket adtunk, elneveztük */
-}
-
-nav {
-    grid-area: n;
 }
 
 aside {
@@ -87,18 +136,11 @@ footer {
         grid-template-columns: 1fr; /* Terület felosztás oszlop szerint, egy részre oszlik a képernyő*/
         grid-template-areas: 
         "h"
-        "n"
-        "as" 
-        "ar"
+        "ar" 
+        "as"
         "f"; /* Kinek mekkora területet adunk: Header, nav, footer teljes szélességében használja article, asside nem teljesen */
-        width: 150%;
-        max-width: 1000px; /* Max szélesség */
         margin: auto; /* Margónak az állítása */
-        background-color: RGB(255,255,230); /* Háttérszín */
-        
+            
     }
-    aside {
-        display: grid;
-        grid-template-columns: auto auto;  
-    }
+
   }
