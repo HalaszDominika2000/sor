@@ -88,6 +88,29 @@ article img {
     margin-left: 15px; 
 }
 
+table {
+    border-collapse: collapse; /*collapse: Az egymás mellett lévő cellák határvonalai összeolvadnak egyetlen közös vonallá.*/
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-bottom: 80px;
+}
+
+h2 {
+    margin-left: 40px; /* Szöveg beljebb került jobbra ment*/
+}
+
+.lightgrey {
+    background-color: grey;
+}
+
+th, td {
+    text-align: center;
+    border: 1px solid gray;
+    padding-left: 10px; /*Több hely lesz az oszlopok között szebb lesz*/
+    padding-right: 10px; /*Több hely lesz az oszlopok között szebb lesz*/
+}
+
 footer {
     text-align: center;
     background-color: gray;
